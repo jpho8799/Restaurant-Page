@@ -1,0 +1,71 @@
+*{
+    box-sizing:border-box;
+}
+@font-face {
+    font-family: 'Press Start 2P';
+    src: url('./PressStart2P-Regular.ttf') format('ttf');
+    font-weight: 300;
+    font-style: normal;
+}
+:root {
+    --white: #ffffff;
+    --pink: #ffcad4;
+    --light-blue: #b0d0d3;
+    --maroon: #c08497;
+    --orange: #f7af9d;
+
+
+}
+body {
+    margin: 0px;
+}
+.header {
+    font-family: 'Fredoka One', cursive;
+    font-size: large;
+    background-color: var(--pink);
+    height: 25%;
+    box-sizing: border-box;
+}
+
+#content {
+    width: 100%;
+    height: 70%;
+
+
+}
+
+#content .tabContainer{
+    width: 100%;
+    height: 15%;
+    box-shadow: lightgray; 
+
+
+
+}
+
+#content .tabContainer button{
+    width: 33.3%;
+    height: 100%;
+    float: left;
+    outline: none;
+    cursor: pointer;
+    padding: 10px;
+    background-color: white;
+    color: lightblue;
+    font-size: 10px;
+
+    
+}
+
+#content .tabContainer button:hover{
+    background-color: var(--pink);
+}
+
+#content .pageContent{
+
+    background-color: white;
+    box-sizing: border-box;
+    display: none;
+
+    
+}
