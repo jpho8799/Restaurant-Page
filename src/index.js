@@ -3,14 +3,21 @@ import menu from "./menu.js";
 import home from "./home.js";
 import header from "./header.js";
 import footer from "./footer.js";
+import Logo from "./images/pixelcafe.png";
 import './styles.css';
+
 
 
 
 let pageContent = ()=>{
     let tabPanel = [];
     let pageContent = [];
+
     const content = document.getElementById("content");
+    const navBar = document.createElement("nav");
+    const logoImg = new Image();
+    logoImg.src = Logo;
+    logoImg.classList.add("img");
     const tabContainer = document.createElement("div");
     const homeTab = document.createElement("button");
     const menuTab = document.createElement("button");
@@ -21,22 +28,19 @@ let pageContent = ()=>{
     menuTab.textContent = "Menu";
     aboutTab.textContent = "About";
 
+    homeTab.classList.add("tabItem");
+    menuTab.classList.add("tabItem");
+    aboutTab.classList.add("tabItem");
+
+
 
     tabContainer.appendChild(homeTab);
     tabContainer.appendChild(menuTab);
     tabContainer.appendChild(aboutTab);
 
-    content.appendChild(tabContainer);
-
     const homePage = home();
     const menuPage = menu();
     const aboutPage = about();
-
-
-    homePage.classList.add("pageContent");
-    menuPage.classList.add("pageContent");
-    aboutPage.classList.add("pageContent");
-
     
    tabPanel.push(homeTab);
    tabPanel.push(menuTab);
@@ -52,7 +56,7 @@ let pageContent = ()=>{
        tab.addEventListener("click", ()=>{
             pageContent.forEach((page, pageIndex)=>{
                 if(pageIndex == index){
-                    page.style.display = "block";
+                    page.style.display = "flex";
 
                 }else{
                     page.style.display = "none";
@@ -63,7 +67,9 @@ let pageContent = ()=>{
    })
 
 
-
+    navBar.appendChild(logoImg);
+    navBar.appendChild(tabContainer);
+    content.appendChild(navBar);
     content.appendChild(homePage);
     content.appendChild(menuPage);
     content.appendChild(aboutPage);
@@ -78,4 +84,5 @@ let restaurantPage = (()=>{
     pageContent();
     document.body.appendChild(pageFooter);
 
-})()
+})();
+
